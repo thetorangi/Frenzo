@@ -12,6 +12,7 @@ export default defineConfig({
     tailwindcss(),
     vueDevTools(),
   ],
+  darkMode: 'class',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
