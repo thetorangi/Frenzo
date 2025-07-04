@@ -6,7 +6,7 @@
       <aside class="space-y-6 lg:sticky lg:top-4 lg:self-start">
         <!-- User Profile -->
         <div class="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl text-center shadow-md">
-          <img src="https://i.pravatar.cc/300?img=70" class="mb-6 rounded-full w-24 h-24 mx-auto ring-2 ring-purple-500">
+          <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="mb-6 rounded-full w-24 h-24 mx-auto ring-2 ring-purple-500">
           <p class="text-lg font-semibold">Karma Codes</p>
           <div class="mt-4 flex justify-around text-sm text-gray-500 dark:text-gray-400">
             <p><strong>182</strong> friends</p>
@@ -34,7 +34,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">18 minutes ago</span>
@@ -53,7 +53,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">28 minutes ago</span>
@@ -73,7 +73,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">18 minutes ago</span>
@@ -92,7 +92,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">28 minutes ago</span>
@@ -112,7 +112,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">18 minutes ago</span>
@@ -131,7 +131,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">28 minutes ago</span>
@@ -151,7 +151,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">18 minutes ago</span>
@@ -170,7 +170,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">28 minutes ago</span>
@@ -190,7 +190,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">18 minutes ago</span>
@@ -209,7 +209,7 @@
         <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-4">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full">
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full">
               <p class="font-semibold">Karma Codes</p>
             </div>
             <span class="text-sm text-gray-500 dark:text-gray-400">28 minutes ago</span>

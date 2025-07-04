@@ -28,7 +28,7 @@
             :key="n"
             class="p-4 text-center bg-gray-100 dark:bg-gray-700 rounded-lg"
           >
-            <img src="https://i.pravatar.cc/300?img=70" class="mb-6 rounded-full mx-auto w-20 h-20 object-cover" />
+            <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="mb-6 rounded-full mx-auto w-20 h-20 object-cover" />
             <p><strong>Karma Codes</strong></p>
             <div class="mt-6 flex justify-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
               <p>182 friends</p>
@@ -41,7 +41,7 @@
         <div class="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
           <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between space-y-4 sm:space-y-0">
             <div class="flex items-center space-x-4">
-              <img src="https://i.pravatar.cc/300?img=70" class="w-10 h-10 rounded-full" />
+              <img src="https://wallpapersok.com/images/hd/itachi-cool-rainy-night-12jcl8xvosu7lads.jpg" class="w-10 h-10 rounded-full" />
               <p><strong>Karma Codes</strong></p>
             </div>
             <p class="text-gray-600 dark:text-gray-400 text-sm">28 minutes ago</p>
