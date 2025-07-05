@@ -12,7 +12,7 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ## 2. Install Dependencies
 
 ```bash
-pip install django djangorestframework djangorestframework-simplejwt pillow
+pip install django djangorestframework djangorestframework-simplejwt pillow django-cors-headers
 ```
 
 ## 3. Verify Installation
