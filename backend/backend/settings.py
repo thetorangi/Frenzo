@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "account.User"  # Custom user model
+
 # Application definition
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=30),
@@ -48,11 +50,11 @@ REST_FRAMEWORK = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173/",  # Adjust this to your frontend's URL
+    "http://127.0.0.1:5173",  # Adjust this to your frontend's URL
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173/",  # Adjust this to your frontend's URL
+    "http://127.0.0.1:5173",  # Adjust this to your frontend's URL
 ]
 
 # Application definition
