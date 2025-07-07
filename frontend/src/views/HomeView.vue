@@ -4,6 +4,6 @@
 
 <template>
   <main>
-    <TheWelcome />
+    <h1>Welcome</h1>
   </main>
 </template>

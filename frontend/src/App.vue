@@ -14,7 +14,7 @@
 </router-link>
 
       <!-- Center: Icons (Hidden on small screens) -->
-      <div class="hidden md:flex items-center space-x-6 transition-all duration-300">
+      <div v-if="userStore.user.isAuthenticated" class="hidden md:flex items-center space-x-6 transition-all duration-300">
         <router-link
           to="/"
           @click.native="selectedIcon = 'home'"
@@ -110,9 +110,45 @@
     <main class="px-4 py-6 bg-gray-50 dark:bg-gray-950 min-h-screen">
       <router-view />
     </main>
-    
+        <Toast />
   </div>
 </template>
+
+<script>
+import { onBeforeMount } from 'vue'
+import axios from 'axios'
+import Toast from '@/components/Toast.vue'
+import { useUserStore } from '@/stores/user'
+
+export default {
+  components: {
+    Toast
+  },
+
+  setup() {
+    const userStore = useUserStore()
+
+    // Initialize store and set token header
+    onBeforeMount(() => {
+      userStore.initStore()
+
+      const token = userStore.user?.access
+
+      if (token) {
+        axios.defaults.headers.common["Authorization"] = "Bearer " + token
+      } else {
+        axios.defaults.headers.common["Authorization"] = ""
+      }
+    })
+
+    return {
+      userStore
+    }
+  }
+}
+</script>
+
+
 
 <script setup>
 import { ref, onMounted, h } from 'vue'

@@ -6,7 +6,6 @@ import FeedView from '@/views/FeedView.vue'
 import MessageView from '@/views/MessageView.vue'
 import SearchView from '@/views/SearchView.vue'
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

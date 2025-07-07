@@ -94,3 +94,16 @@
     </div>
   </div>
 </template>
+
+<script>
+import PeopleYouMayKnow from '../components/PeopleYouMayKnow.vue'
+import Trends from '../components/Trends.vue'
+
+export default {
+    name: 'SearchView',
+    components: {
+        PeopleYouMayKnow,
+        Trends,
+    }
+}
+</script>
