@@ -1,6 +1,17 @@
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework import serializers
 
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    def validate(self, attrs):
-        attrs['username'] = attrs.get('email')  # Treat email as username
-        return super().validate(attrs)
+from .models import User, FriendshipRequest
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'name', 'email', 'friends_count', 'posts_count', 'get_avatar',)
+
+
+class FriendshipRequestSerializer(serializers.ModelSerializer):
+    created_by = UserSerializer(read_only=True)
+    
+    class Meta:
+        model = FriendshipRequest
+        fields = ('id', 'created_by',)
