@@ -311,5 +311,3 @@ Frenzo's frontend is styled using **TailwindCSS** with the `@tailwindcss/forms` 
 ## 👨‍💻 Author
 
 Made with ❤️ by **CoderKarma⚡** GitHub: [https://github.com/thetorangi](https://github.com/thetorangi)
-
-```
