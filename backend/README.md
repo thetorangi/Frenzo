@@ -78,26 +78,34 @@ python manage.py runserver
 
 Server runs at: http://127.0.0.1:8000
 ```
+## 🔑 API Authentication
 
--> **📜 API Authentication**
+Frenzo uses **JWT (JSON Web Tokens)** for API authentication via `djangorestframework-simplejwt`.
 
-Using JWT (JSON Web Tokens) via djangorestframework-simplejwt.
-🔑 Endpoints
-Endpoint	Method	Description
-/api/token/	POST	Get access and refresh tokens
-/api/token/refresh/	POST	Refresh access token
-🧾 Header Format
+### Endpoints
 
-Authorization: Bearer <access_token>
+| Endpoint | Method | Description |
+| :----------------- | :----- | :-------------------------- |
+| `/api/token/` | `POST` | Get access and refresh tokens |
+| `/api/token/refresh/` | `POST` | Refresh access token |
 
-Configured for long-lived sessions:
+### Header Format
 
+Include your access token in the `Authorization` header for protected routes:
+
+### JWT Configuration
+
+
+The JWT tokens are configured for long-lived sessions:
+
+```python
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=180),
 }
+```
 
-🌐 CORS Configuration
+### 🌐 CORS Configuration
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
@@ -108,7 +116,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
 ]
 
--> 🖼 **Media & Static Files**
+### 🖼 **Media & Static Files**
 
 Media uploads handled using Pillow:
 
@@ -124,7 +132,7 @@ AUTH_USER_MODEL = 'account.User'
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 TIME_ZONE = 'Asia/Kolkata'
 
-📦 **requirements.txt**
+### 📦 requirements.txt
 
 asgiref==3.6.0
 Django==4.2
@@ -136,7 +144,7 @@ PyJWT==2.6.0
 pytz==2023.3
 sqlparse==0.4.3
 
-🔐 **Security Notes**
+### 🔐 **Security Notes**
 
 ⚠️ SECRET_KEY is hardcoded — move it to .env in production.
 ⚠️ DEBUG=True — switch to False when deploying.
@@ -153,6 +161,6 @@ Set up CI/CD (GitHub Actions)
 
     Document API with Swagger or Postman
 
-👨‍💻 **Author**
+### 👨‍💻 **Author**
 
 Made with ❤️ by Karma 
