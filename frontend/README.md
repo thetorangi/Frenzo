@@ -126,7 +126,6 @@ All custom styles live inside the `src/assets/` directory.
 
 ## 📌 TODO / Improvements
 
-- [ ] Add dark mode  
 - [ ] Implement role-based routing  
 - [ ] Add unit tests with Vitest  
 - [ ] Add CI/CD (e.g., Netlify/GitHub Actions)  
