@@ -106,7 +106,7 @@ SIMPLE_JWT = {
 ```
 
 ### 🌐 CORS Configuration
-
+```
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
@@ -115,25 +115,27 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
 ]
-
+```
 ### 🖼 **Media & Static Files**
 
 Media uploads handled using Pillow:
-
+```
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
+```
 Files are served from /media/ during development.
-🛠 Settings Summary
 
+### 🛠 Settings Summary
+```
 DEBUG = True
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'account.User'
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 TIME_ZONE = 'Asia/Kolkata'
+```
 
 ### 📦 requirements.txt
-
+```
 asgiref==3.6.0
 Django==4.2
 django-cors-headers==3.14.0
@@ -143,6 +145,9 @@ Pillow==9.5.0
 PyJWT==2.6.0
 pytz==2023.3
 sqlparse==0.4.3
+setuptools>=65.0.0 
+
+```
 
 ### 🔐 **Security Notes**
 
@@ -159,8 +164,8 @@ Enable file storage (S3/GCS)
 
 Set up CI/CD (GitHub Actions)
 
-    Document API with Swagger or Postman
+Document API with Swagger or Postman
 
 ### 👨‍💻 **Author**
 
-Made with ❤️ by Karma 
+Made with ❤️ by CoderKarma⚡
