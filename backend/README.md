@@ -169,4 +169,4 @@ Document API with Swagger or Postman
 
 ### 👨‍💻 **Author**
 
-**Made with ❤️ by CoderKarma⚡**
+Made with ❤️ by **CoderKarma⚡**
