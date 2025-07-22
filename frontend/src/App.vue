@@ -6,7 +6,22 @@
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between">
           <!-- Left -->
-          <div class="flex items-center space-x-4">    
+          <div class="flex items-center space-x-4">
+            <!-- <button class="lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-gray-100"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 6.75h15m-15 5.25h15m-15 5.25h15"
+                />
+              </svg>
+            </button> -->
 
             <!-- Show only on small screens -->
             <button
