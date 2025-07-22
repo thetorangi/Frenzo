@@ -152,19 +152,19 @@ setuptools>=65.0.0
 ### 🔐 **Security Notes**
 
 ⚠️ SECRET_KEY is hardcoded — move it to .env in production.  
-⚠️ DEBUG=True — switch to False when deploying.
-✅ No sensitive keys exposed — safe for public GitHub.
-📌 TODO / Improvements
+⚠️ DEBUG=True — switch to False when deploying.  
+✅ No sensitive keys exposed — safe for public GitHub.  
+📌 TODO / Improvements  
 
-Add automated tests
+Add automated tests  
 
-Switch to PostgreSQL in production
+Switch to PostgreSQL in production  
 
-Enable file storage (S3/GCS)
+Enable file storage (S3/GCS)  
 
-Set up CI/CD (GitHub Actions)
+Set up CI/CD (GitHub Actions)  
 
-Document API with Swagger or Postman
+Document API with Swagger or Postman  
 
 ### 👨‍💻 **Author**
 
