@@ -29,32 +29,32 @@ Frenzo aims to provide a robust and scalable social media experience, featuring:
 
 ```
 
-frenzo/
-├── backend/             \# Django REST Framework API
-│   ├── account/
-│   ├── post/
-│   ├── chat/
-│   ├── notification/
-│   ├── search/
-│   ├── backend/
-│   ├── media/
-│   ├── manage.py
-│   └── requirements.txt
-├── frontend/            \# Vue 3 + Vite Application
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── router/
-│   │   ├── store/
-│   │   └── main.js
-│   ├── index.html
-│   ├── package.json
-│   ├── tailwind.config.js
-│   └── vite.config.js
-├── .gitignore
-└── README.md            \# This file
+frenzo/  
+├── backend/             \# Django REST Framework API  
+│   ├── account/  
+│   ├── post/  
+│   ├── chat/  
+│   ├── notification/  
+│   ├── search/  
+│   ├── backend/  
+│   ├── media/  
+│   ├── manage.py  
+│   └── requirements.txt  
+├── frontend/            \# Vue 3 + Vite Application  
+│   ├── public/  
+│   ├── src/  
+│   │   ├── assets/  
+│   │   ├── components/  
+│   │   ├── pages/  
+│   │   ├── router/  
+│   │   ├── store/  
+│   │   └── main.js  
+│   ├── index.html  
+│   ├── package.json  
+│   ├── tailwind.config.js  
+│   └── vite.config.js  
+├── .gitignore  
+└── README.md            \# This file  
 
 ````
 
@@ -317,5 +317,4 @@ Frenzo's frontend is styled using **TailwindCSS** with the `@tailwindcss/forms` 
 
 Made with ❤️ by **CoderKarma⚡** GitHub: [https://github.com/thetorangi](https://github.com/thetorangi)
 
-```
 ```
