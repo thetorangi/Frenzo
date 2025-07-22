@@ -150,7 +150,7 @@ setuptools>=65.0.0
 ```
 
 ### 🔐 **Security Notes**
-
+```
 ⚠️ SECRET_KEY is hardcoded — move it to .env in production.  
 ⚠️ DEBUG=True — switch to False when deploying.  
 ✅ No sensitive keys exposed — safe for public GitHub.  
@@ -165,7 +165,8 @@ Enable file storage (S3/GCS)
 Set up CI/CD (GitHub Actions)  
 
 Document API with Swagger or Postman  
+```
 
 ### 👨‍💻 **Author**
 
-Made with ❤️ by CoderKarma⚡
+**Made with ❤️ by CoderKarma⚡**
