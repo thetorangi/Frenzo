@@ -1,8 +1,3 @@
-Sure, here's a combined and well-formatted `README.md` file for the root directory of your Frenzo project, incorporating both the frontend and backend details.
-
-You can copy the entire content below and save it as `README.md` in your project's root directory.
-
-```markdown
 # 🌟 Frenzo — Modern Social Media Platform
 
 Welcome to **Frenzo** — a modern social media platform designed for seamless interaction, built with cutting-edge technologies for both its frontend and backend.
