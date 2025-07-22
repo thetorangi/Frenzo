@@ -32,19 +32,19 @@ This API serves everything from authentication and user accounts to chat, posts,
 
 ## 📁 Project Structure
 
+```
 backend/
-├── account/ # Custom user model & auth
-├── post/ # Posts, likes, comments
-├── chat/ # Messaging system
-├── notification/ # Notifications for activity
-├── search/ # Search functionality
-├── backend/ # Django project settings
-├── media/ # Uploaded media files
+├── account/             # Custom user model & authentication
+├── post/                # Posts, likes, comments
+├── chat/                # Messaging system
+├── notification/        # Notifications for activity
+├── search/              # Search functionality
+├── backend/             # Django project settings
+├── media/               # Uploaded media files
 ├── manage.py
 └── requirements.txt
 
-
-
+```
 ---
 
 ## ⚙️ Installation & Setup
