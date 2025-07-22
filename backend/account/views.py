@@ -13,6 +13,6 @@ def activateemail(request):
         user.is_active = True
         user.save()
     
-        return HttpResponse('Yeahh.....The user is now activated. You can go ahead and log in!')
+        return HttpResponse('The user is now activated. You can go ahead and log in!')
     else:
         return HttpResponse('The parameters is not valid!')
