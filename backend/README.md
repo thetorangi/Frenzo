@@ -169,5 +169,5 @@ Document API with Swagger or Postman
 
 ### 👨‍💻 **Author**
 
-Made with ❤️ by **CoderKarma⚡**
+Made with ❤️ by **CoderKarma⚡** GitHub: [https://github.com/thetorangi](https://github.com/thetorangi)
 
