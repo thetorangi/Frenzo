@@ -61,7 +61,7 @@ To get the entire Frenzo application running locally, follow these steps:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/yourusername/frenzo.git](https://github.com/yourusername/frenzo.git)
+    git clone [https://github.com/thetorangi/frenzo.git](https://github.com/thetorangi/frenzo.git)
     cd frenzo
     ```
 
