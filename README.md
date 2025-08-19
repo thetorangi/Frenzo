@@ -62,7 +62,7 @@ frenzo/
 ![UML Diagram](docs/uml-diagram.svg)
 
 ### Interactive Version
-For an interactive version with zoom and pan capabilities, visit: [Interactive UML Diagram]([https://thetorangi.github.io/frenzo/index.html](https://thetorangi.github.io/frenzo-uml/))
+For an interactive version with zoom and pan capabilities, visit: [Interactive UML Diagram](https://thetorangi.github.io/frenzo-uml/)
 
 ## Database Models
 
