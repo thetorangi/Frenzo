@@ -124,6 +124,26 @@ def post_like(request, pk):
 
 
 @api_view(['POST'])
+def post_unlike(request, pk):
+    try:
+        post = Post.objects.get(pk=pk)
+    except Post.DoesNotExist:
+        return JsonResponse({'error': 'Post not found'}, status=404)
+
+    like = post.likes.filter(created_by=request.user).first()
+    if like:
+        post.likes.remove(like)
+        like.delete()
+
+        post.likes_count = max(0, post.likes_count - 1)
+        post.save()
+
+        return JsonResponse({'message': 'like removed'})
+    else:
+        return JsonResponse({'message': 'post not liked yet'})
+
+
+@api_view(['POST'])
 def post_create_comment(request, pk):
     comment = Comment.objects.create(body=request.data.get('body'), created_by=request.user)
 
