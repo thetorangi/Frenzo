@@ -166,6 +166,25 @@ def post_delete(request, pk):
 
     return JsonResponse({'message': 'post deleted'})
 
+@api_view(['DELETE'])
+def comment_delete(request, pk):
+    try:
+        # pk here is the Comment ID
+        comment = Comment.objects.filter(created_by=request.user).get(pk=pk)
+    except Comment.DoesNotExist:
+        return JsonResponse({'error': 'Comment not found or unauthorized'}, status=404)
+    
+    # Find the post that contains this comment
+    post = Post.objects.filter(comments=comment).first()
+    if post:
+        post.comments.remove(comment)
+        post.comments_count = max(0, post.comments_count - 1)
+        post.save()
+
+    comment.delete()
+
+    return JsonResponse({'message': 'comment deleted and count updated'})
+
 
 @api_view(['POST'])
 def post_report(request, pk):
