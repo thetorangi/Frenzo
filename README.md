@@ -55,13 +55,41 @@ frenzo/
 
 ---
 
+# DRF Project - Database Schema
+
+## UML Class Diagram
+
+![UML Diagram](docs/uml-diagram.svg)
+
+### Interactive Version
+For an interactive version with zoom and pan capabilities, visit: [Interactive UML Diagram](https://thetorangi.github.io/frenzo-uml/)
+
+## Database Models
+
+### Core Models
+- **User**: Main user entity with authentication and profile data
+- **Post**: User-generated content with privacy controls
+- **Comment**: Comments on posts
+- **Like**: Like interactions on posts
+
+### Communication Models  
+- **Conversation**: Private messaging between users
+- **ConversationMessage**: Individual messages in conversations
+- **FriendshipRequest**: Friend request management
+
+### Support Models
+- **Notification**: System notifications for users
+- **PostAttachment**: File attachments for posts
+- **Trend**: Trending hashtags tracking
+
+
 ## 🚀 Getting Started (Overall Setup)
 
 To get the entire Frenzo application running locally, follow these steps:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/yourusername/frenzo.git](https://github.com/yourusername/frenzo.git)
+    git clone [https://github.com/thetorangi/frenzo.git]
     cd frenzo
     ```
 

@@ -1,0 +1,221 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    <style>
+      .class-box { 
+        fill: white; 
+        stroke: #333; 
+        stroke-width: 2; 
+        rx: 8; 
+      }
+      .class-title { 
+        font-size: 16px; 
+        font-weight: bold; 
+        text-anchor: middle; 
+        fill: #333;
+        font-family: Arial, sans-serif;
+      }
+      .class-separator { 
+        stroke: #333; 
+        stroke-width: 1; 
+      }
+      .class-field { 
+        font-size: 12px; 
+        text-anchor: start; 
+        fill: #555;
+        font-family: Arial, sans-serif;
+      }
+      .relationship-line { 
+        stroke: #666; 
+        stroke-width: 2; 
+        fill: none;
+        marker-end: url(#arrowhead);
+      }
+      .relationship-label { 
+        font-size: 11px; 
+        text-anchor: middle; 
+        fill: #444;
+        font-family: Arial, sans-serif;
+      }
+      .primary-key { fill: #2563eb; font-weight: bold; }
+      .foreign-key { fill: #dc2626; }
+    </style>
+  </defs>
+  
+  <!-- User Class (Top Center) -->
+  <g id="user-class">
+    <rect class="class-box" x="550" y="50" width="300" height="220"/>
+    <text class="class-title" x="700" y="75">User</text>
+    <line class="class-separator" x1="550" y1="85" x2="850" y2="85"/>
+    <text class="class-field primary-key" x="560" y="105">+ id: UUID (PK)</text>
+    <text class="class-field" x="560" y="125">+ email: String (unique)</text>
+    <text class="class-field" x="560" y="145">+ name: String</text>
+    <text class="class-field" x="560" y="165">+ avatar: ImageField</text>
+    <text class="class-field" x="560" y="185">+ friends: M2M(User)</text>
+    <text class="class-field" x="560" y="205">+ people_you_may_know: M2M(User)</text>
+    <text class="class-field" x="560" y="225">+ friends_count: Integer</text>
+    <text class="class-field" x="560" y="245">+ posts_count: Integer</text>
+    <text class="class-field" x="560" y="265">+ date_joined: DateTime</text>
+  </g>
+
+  <!-- FriendshipRequest Class (Top Right) -->
+  <g id="friendship-class">
+    <rect class="class-box" x="950" y="50" width="280" height="160"/>
+    <text class="class-title" x="1090" y="75">FriendshipRequest</text>
+    <line class="class-separator" x1="950" y1="85" x2="1230" y2="85"/>
+    <text class="class-field primary-key" x="960" y="105">+ id: UUID (PK)</text>
+    <text class="class-field foreign-key" x="960" y="125">+ created_for: FK(User)</text>
+    <text class="class-field foreign-key" x="960" y="145">+ created_by: FK(User)</text>
+    <text class="class-field" x="960" y="165">+ status: String</text>
+    <text class="class-field" x="960" y="185">+ created_at: DateTime</text>
+  </g>
+
+  <!-- Conversation Class (Top Left) -->
+  <g id="conversation-class">
+    <rect class="class-box" x="220" y="50" width="260" height="140"/>
+    <text class="class-title" x="350" y="75">Conversation</text>
+    <line class="class-separator" x1="220" y1="85" x2="480" y2="85"/>
+    <text class="class-field primary-key" x="230" y="105">+ id: UUID (PK)</text>
+    <text class="class-field" x="230" y="125">+ users: M2M(User)</text>
+    <text class="class-field" x="230" y="145">+ created_at: DateTime</text>
+    <text class="class-field" x="230" y="165">+ modified_at: DateTime</text>
+  </g>
+
+  <!-- Post Class (Middle Center) -->
+  <g id="post-class">
+    <rect class="class-box" x="550" y="350" width="300" height="200"/>
+    <text class="class-title" x="700" y="375">Post</text>
+    <line class="class-separator" x1="550" y1="385" x2="850" y2="385"/>
+    <text class="class-field primary-key" x="560" y="405">+ id: UUID (PK)</text>
+    <text class="class-field" x="560" y="425">+ body: TextField</text>
+    <text class="class-field" x="560" y="445">+ is_private: Boolean</text>
+    <text class="class-field" x="560" y="465">+ likes_count: Integer</text>
+    <text class="class-field" x="560" y="485">+ comments_count: Integer</text>
+    <text class="class-field foreign-key" x="560" y="505">+ created_by: FK(User)</text>
+    <text class="class-field" x="560" y="525">+ created_at: DateTime</text>
+  </g>
+
+  <!-- ConversationMessage Class (Left Middle) -->
+  <g id="message-class">
+    <rect class="class-box" x="50" y="300" width="280" height="160"/>
+    <text class="class-title" x="190" y="325">ConversationMessage</text>
+    <line class="class-separator" x1="50" y1="335" x2="330" y2="335"/>
+    <text class="class-field primary-key" x="60" y="355">+ id: UUID (PK)</text>
+    <text class="class-field foreign-key" x="60" y="375">+ conversation: FK(Conversation)</text>
+    <text class="class-field" x="60" y="395">+ body: TextField</text>
+    <text class="class-field foreign-key" x="60" y="415">+ created_by: FK(User)</text>
+    <text class="class-field foreign-key" x="60" y="435">+ sent_to: FK(User)</text>
+  </g>
+
+  <!-- PostAttachment Class (Right Middle) -->
+  <g id="attachment-class">
+    <rect class="class-box" x="950" y="300" width="280" height="120"/>
+    <text class="class-title" x="1090" y="325">PostAttachment</text>
+    <line class="class-separator" x1="950" y1="335" x2="1230" y2="335"/>
+    <text class="class-field primary-key" x="960" y="355">+ id: UUID (PK)</text>
+    <text class="class-field" x="960" y="375">+ image: ImageField</text>
+    <text class="class-field foreign-key" x="960" y="395">+ created_by: FK(User)</text>
+  </g>
+
+  <!-- Like Class (Bottom Left) -->
+  <g id="like-class">
+    <rect class="class-box" x="150" y="650" width="240" height="120"/>
+    <text class="class-title" x="270" y="675">Like</text>
+    <line class="class-separator" x1="150" y1="685" x2="390" y2="685"/>
+    <text class="class-field primary-key" x="160" y="705">+ id: UUID (PK)</text>
+    <text class="class-field foreign-key" x="160" y="725">+ created_by: FK(User)</text>
+    <text class="class-field" x="160" y="745">+ created_at: DateTime</text>
+  </g>
+
+  <!-- Comment Class (Bottom Center) -->
+  <g id="comment-class">
+    <rect class="class-box" x="480" y="650" width="240" height="140"/>
+    <text class="class-title" x="600" y="675">Comment</text>
+    <line class="class-separator" x1="480" y1="685" x2="720" y2="685"/>
+    <text class="class-field primary-key" x="490" y="705">+ id: UUID (PK)</text>
+    <text class="class-field" x="490" y="725">+ body: TextField</text>
+    <text class="class-field foreign-key" x="490" y="745">+ created_by: FK(User)</text>
+    <text class="class-field" x="490" y="765">+ created_at: DateTime</text>
+  </g>
+
+  <!-- Notification Class (Bottom Right) -->
+  <g id="notification-class">
+    <rect class="class-box" x="800" y="650" width="280" height="180"/>
+    <text class="class-title" x="940" y="675">Notification</text>
+    <line class="class-separator" x1="800" y1="685" x2="1080" y2="685"/>
+    <text class="class-field primary-key" x="810" y="705">+ id: UUID (PK)</text>
+    <text class="class-field" x="810" y="725">+ body: TextField</text>
+    <text class="class-field" x="810" y="745">+ is_read: Boolean</text>
+    <text class="class-field" x="810" y="765">+ type_of_notification: String</text>
+    <text class="class-field foreign-key" x="810" y="785">+ post: FK(Post) [nullable]</text>
+    <text class="class-field foreign-key" x="810" y="805">+ created_by: FK(User)</text>
+  </g>
+
+  <!-- Trend Class (Far Left) -->
+  <g id="trend-class">
+    <rect class="class-box" x="50" y="550" width="200" height="120"/>
+    <text class="class-title" x="150" y="575">Trend</text>
+    <line class="class-separator" x1="50" y1="585" x2="250" y2="585"/>
+    <text class="class-field primary-key" x="60" y="605">+ id: Integer (PK)</text>
+    <text class="class-field" x="60" y="625">+ hashtag: String</text>
+    <text class="class-field" x="60" y="645">+ occurrences: Integer</text>
+  </g>
+
+  <!-- Relationships with non-overlapping paths -->
+  
+  <!-- User to FriendshipRequest -->
+  <path class="relationship-line" d="M 850 130 L 900 130 L 900 130 L 950 130"/>
+  <text class="relationship-label" x="900" y="125">1:N</text>
+  
+  <!-- User to Conversation -->
+  <path class="relationship-line" d="M 550 130 L 500 130 L 500 120 L 480 120"/>
+  <text class="relationship-label" x="515" y="115">M:M</text>
+  
+  <!-- User to Post -->
+  <path class="relationship-line" d="M 700 270 L 700 300 L 700 350"/>
+  <text class="relationship-label" x="720" y="310">1:N</text>
+  
+  <!-- User to ConversationMessage (created_by) -->
+  <path class="relationship-line" d="M 550 200 L 400 200 L 400 280 L 330 380"/>
+  <text class="relationship-label" x="440" y="295">1:N</text>
+  
+  <!-- User to PostAttachment -->
+  <path class="relationship-line" d="M 850 200 L 900 200 L 900 280 L 950 360"/>
+  <text class="relationship-label" x="920" y="295">1:N</text>
+  
+  <!-- User to Like -->
+  <path class="relationship-line" d="M 550 250 L 300 250 L 300 600 L 270 650"/>
+  <text class="relationship-label" x="320" y="450">1:N</text>
+  
+  <!-- User to Comment -->
+  <path class="relationship-line" d="M 650 270 L 650 580 L 600 650"/>
+  <text class="relationship-label" x="670" y="460">1:N</text>
+  
+  <!-- User to Notification -->
+  <path class="relationship-line" d="M 800 250 L 940 250 L 940 600 L 940 650"/>
+  <text class="relationship-label" x="960" y="450">1:N</text>
+  
+  <!-- Conversation to ConversationMessage -->
+  <path class="relationship-line" d="M 350 190 L 350 250 L 190 250 L 190 300"/>
+  <text class="relationship-label" x="270" y="245">1:N</text>
+  
+  <!-- Post to PostAttachment -->
+  <path class="relationship-line" d="M 850 400 L 900 400 L 900 360 L 950 360"/>
+  <text class="relationship-label" x="900" y="395">M:M</text>
+  
+  <!-- Post to Like -->
+  <path class="relationship-line" d="M 550 500 L 400 500 L 400 600 L 270 600 L 270 650"/>
+  <text class="relationship-label" x="410" y="575">M:M</text>
+  
+  <!-- Post to Comment -->
+  <path class="relationship-line" d="M 650 550 L 650 600 L 600 650"/>
+  <text class="relationship-label" x="670" y="600">1:N</text>
+  
+  <!-- Post to Notification -->
+  <path class="relationship-line" d="M 800 500 L 940 500 L 940 580 L 940 650"/>
+  <text class="relationship-label" x="960" y="575">1:N</text>
+  
+</svg>
