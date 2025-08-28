@@ -4,9 +4,9 @@
       <div class="p-12 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
         <h1 class="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">Edit profile</h1>
         <p class="mb-6 text-gray-600 dark:text-gray-400">
-          Lorem ipsum dolor sit mate. Lorem ipsum dolor sit mate. Lorem ipsum dolor sit mate.
-          Lorem ipsum dolor sit mate. Lorem ipsum dolor sit mate. Lorem ipsum dolor sit mate.
-        </p>
+  Customize your profile details, change your display name, and update your profile picture.
+  A complete profile helps others connect with you more easily.
+</p>
         <RouterLink to="/profile/edit/password" class="underline text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300">
           Edit password
         </RouterLink>
