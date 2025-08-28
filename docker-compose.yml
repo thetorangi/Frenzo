@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    container_name: frenzo_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      DJANGO_SECRET_KEY: devsecretkey
+      DJANGO_DEBUG: 1
+      DJANGO_ALLOWED_HOSTS: "*"
+
+  frontend:
+    build: ./frontend
+    container_name: frenzo_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
