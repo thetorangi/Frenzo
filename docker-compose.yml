@@ -1,21 +1,58 @@
-version: "3.9"
+version: '3.8'
+
 services:
   backend:
-    build: ./backend
-    container_name: frenzo_backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - backend_media:/app/media
     environment:
-      DJANGO_SECRET_KEY: devsecretkey
-      DJANGO_DEBUG: 1
-      DJANGO_ALLOWED_HOSTS: "*"
+      - DEBUG=1
+      - DATABASE_URL=sqlite:///db.sqlite3
+    networks:
+      - app-network
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
 
   frontend:
-    build: ./frontend
-    container_name: frenzo_frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "3000:80"
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
+    networks:
+      - app-network
+    environment:
+      - VITE_API_URL=http://localhost:8000
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: myapp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  backend_media:
+
+networks:
+  app-network:
+    driver: bridge
