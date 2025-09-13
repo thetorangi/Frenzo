@@ -119,6 +119,12 @@ This method uses Docker Compose to set up both the backend API, the frontend app
         ```
       * This will start three services: `backend`, `frontend`, and `db`. The first run may take a few minutes as Docker builds the images and installs dependencies.
       * The `backend` container will automatically run database migrations on startup.
+      * If facing issue while starting serivces
+          * try below steps 
+            ```bash
+              sudo usermod -aG docker $USER
+              newgrp docker
+            ```
 
 5.  **Access the Application:**
 
