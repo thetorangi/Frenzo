@@ -23,7 +23,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create media directory
-RUN mkdir -p media
+# RUN mkdir -p media
+RUN if [ -d "backend/media" ]; then cp -r backend/media/* media/ 2>/dev/null || true; fi
 
 # Expose port
 EXPOSE 8000
