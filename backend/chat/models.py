@@ -13,7 +13,7 @@ class Conversation(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
     
     def modified_at_formatted(self):
-       return timesince(self.created_at)
+       return timesince(self.modified_at)
 
 
 class ConversationMessage(models.Model):
@@ -23,6 +23,14 @@ class ConversationMessage(models.Model):
     sent_to = models.ForeignKey(User, related_name='received_messages', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, related_name='sent_messages', on_delete=models.CASCADE)
-    
+
     def created_at_formatted(self):
-       return timesince(self.created_at)
+        return timesince(self.created_at)
+
+    def save(self, *args, **kwargs):
+        is_new = self._state.adding
+        super().save(*args, **kwargs)
+        if is_new:
+            # set conversation.modified_at to this message's created_at
+            Conversation.objects.filter(pk=self.conversation_id)\
+                .update(modified_at=self.created_at)

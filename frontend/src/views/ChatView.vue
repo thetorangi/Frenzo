@@ -12,7 +12,8 @@
           >
             <div class="flex items-center space-x-2">
               <template v-for="user in conversation.users" :key="user.id">
-                <img :src="user.get_avatar" class="w-10 h-10 rounded-full" />
+                <img v-if="user.id !== userStore.user.id" 
+                :src="user.get_avatar" class="w-10 h-10 rounded-full" />
                 <p
                   class="text-xs font-bold text-gray-800 dark:text-gray-200"
                   v-if="user.id !== userStore.user.id"
@@ -21,7 +22,8 @@
                 </p>
               </template>
             </div>
-            <span class="text-xs text-gray-500">{{ conversation.modified_at_formatted }} ago</span>
+<span class="text-xs text-gray-500">{{ conversation.modified_at_formatted }} ago</span>
+
           </div>
         </div>
       </div>
@@ -126,6 +128,9 @@ export default {
         .then((response) => {
           this.conversations = response.data
 
+ this.conversations.sort((a, b) =>
+        new Date(b.modified_at) - new Date(a.modified_at)
+      )
           if (this.conversations.length) {
             this.activeConversationId = this.conversations[0].id
             this.getMessages()
@@ -149,21 +154,32 @@ export default {
         })
     },
 
-    submitForm() {
-      if (!this.body.trim()) return
+  submitForm() {
+  if (!this.body.trim()) return
 
-      axios
-        .post(`/api/chat/${this.activeConversation.id}/send/`, {
-          body: this.body,
-        })
-        .then((response) => {
-          this.activeConversation.messages.push(response.data)
-          this.body = ''
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-    },
+  axios.post(`/api/chat/${this.activeConversation.id}/send/`, { body: this.body })
+    .then((response) => {
+      // update messages in the right pane
+      this.activeConversation.messages.push(response.data)
+      this.body = ''
+
+      // EITHER: quick local update of the left list time
+      const conv = this.conversations.find(c => c.id === this.activeConversation.id)
+      if (conv) {
+        // use the new message time as the latest activity
+        conv.modified_at_formatted = response.data.created_at_formatted
+      }
+
+      // OR: re-fetch the conversations list to get fresh times (and resort)
+      // this.getConversations()
+      
+      this.conversations.sort((a, b) =>
+        new Date(b.modified_at) - new Date(a.modified_at)
+      )
+    })
+    .catch(console.error)
+}
+
   },
 }
 </script>

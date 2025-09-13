@@ -166,25 +166,38 @@ def post_delete(request, pk):
 
     return JsonResponse({'message': 'post deleted'})
 
+
 @api_view(['DELETE'])
 def comment_delete(request, pk):
     try:
-        # pk here is the Comment ID
-        comment = Comment.objects.filter(created_by=request.user).get(pk=pk)
+        # Fetch the comment by ID
+        comment = Comment.objects.get(pk=pk)
     except Comment.DoesNotExist:
-        return JsonResponse({'error': 'Comment not found or unauthorized'}, status=404)
-    
-    # Find the post that contains this comment
-    post = Post.objects.filter(comments=comment).first()
-    if post:
+        return JsonResponse({'error': 'Comment not found'}, status=404)
+
+    # Find the related post (assuming Comment has a ForeignKey to Post, adjust if ManyToMany)
+    post = getattr(comment, "post", None)  # if Comment has post=ForeignKey
+    # OR if it's ManyToMany like your earlier code, fallback:
+    if not post:
+        post = Post.objects.filter(comments=comment).first()
+
+    if not post:
+        return JsonResponse({'error': 'Post not found for this comment'}, status=404)
+
+    # Authorization: allow if comment owner OR post owner
+    if comment.created_by != request.user and post.created_by != request.user:
+        return JsonResponse({'error': 'Unauthorized'}, status=403)
+
+    # Remove from post if using ManyToMany relation
+    if hasattr(post, "comments") and comment in post.comments.all():
         post.comments.remove(comment)
         post.comments_count = max(0, post.comments_count - 1)
         post.save()
 
+    # Finally delete the comment
     comment.delete()
 
-    return JsonResponse({'message': 'comment deleted and count updated'})
-
+    return JsonResponse({'message': 'Comment deleted and count updated'})
 
 @api_view(['POST'])
 def post_report(request, pk):

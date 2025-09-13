@@ -16,8 +16,13 @@
         :key="comment.id"
         class="ml-2 lg:ml-6 p-4 bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg"
       >
-        <CommentItem :comment="comment" />
+        <CommentItem
+          :comment="comment"
+          :postAuthorId="post.created_by.id"
+          @deleteComment="handleDeleteComment"
+        />
       </div>
+
 
       <!-- Comment Form -->
       <div class="bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg">
@@ -84,6 +89,10 @@ export default {
   },
 
   methods: {
+      handleDeleteComment(commentId) {
+      this.post.comments = this.post.comments.filter(c => c.id !== commentId)
+      this.post.comments_count -= 1
+    },
     getPost() {
       axios
         .get(`/api/posts/${this.$route.params.id}/`)
