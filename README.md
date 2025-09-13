@@ -33,7 +33,10 @@ frenzo/
 │   ├── search/  
 │   ├── backend/  
 │   ├── media/  
-│   ├── manage.py  
+│   ├── manage.py 
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── .env
 │   └── requirements.txt  
 ├── frontend/            \# Vue 3 + Vite Application  
 │   ├── public/  
@@ -44,11 +47,13 @@ frenzo/
 │   │   ├── router/  
 │   │   ├── store/  
 │   │   └── main.js  
+│   ├── Dockerfile
+│   ├── .dockerignore
 │   ├── index.html  
 │   ├── package.json  
 │   ├── tailwind.config.js  
 │   └── vite.config.js  
-├── .gitignore  
+├── docker-compose.yml
 └── README.md            \# This file  
 
 ```
@@ -85,21 +90,81 @@ For an interactive version with zoom and pan capabilities, visit: [Interactive U
 
 ## 🚀 Getting Started (Overall Setup)
 
-To get the entire Frenzo application running locally, follow these steps:
 
-1.  **Clone the Repository:**
+This method uses Docker Compose to set up both the backend API, the frontend application, and a PostgreSQL database with a single command.
+
+1.  **Prerequisites:** Ensure you have [Docker](https://www.docker.com/products/docker-desktop/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+
+2.  **Clone the Repository:**
+
     ```bash
     git clone [https://github.com/thetorangi/frenzo.git]
     cd frenzo
     ```
 
-2.  **Set up the Backend:** (Refer to the Backend Installation section below)
+3.  **Set up Environment Variables:**
 
-3.  **Set up the Frontend:** (Refer to the Frontend Installation section below)
+      * Navigate to the `backend/` directory.
+      * Copy the example environment file:
+        ```bash
+        cp .env.example .env
+        ```
+      * You can now configure your `backend/.env` file. The provided `docker-compose.yml` is pre-configured to use PostgreSQL, so no changes are needed for the default setup.
+
+4.  **Run with Docker Compose:**
+
+      * From the root `frenzo/` directory, run the following command to build the images and start the containers:
+        ```bash
+        docker compose up --build
+        ```
+      * This will start three services: `backend`, `frontend`, and `db`. The first run may take a few minutes as Docker builds the images and installs dependencies.
+      * The `backend` container will automatically run database migrations on startup.
+
+5.  **Access the Application:**
+
+      * The backend API will be accessible at: **http://localhost:8000**
+      * The frontend application will be accessible at: **http://localhost:5173**
+
+6.  **Create a Superuser (Optional):**
+
+      * To access the Django admin panel and manage your data, you can create a superuser inside the running container. Run this command from the root directory:
+        ```bash
+        docker compose exec backend python manage.py createsuperuser
+        ```
+
+7.  **Stopping the Services:**
+
+      * To stop all running containers, simply press `Ctrl+C` in the terminal where `docker compose up` is running.
+      * To stop and remove all containers, networks, and volumes associated with the project, run:
+        ```bash
+        docker compose down -v
+        ```
+
+-----
+
+### 💻 Manual Setup (Alternative)
+
+For developers who prefer to set up the environment directly on their machine.
+
+1.  **Clone the Repository:**
+
+    ```bash
+    git clone [https://github.com/thetorangi/frenzo.git]
+    cd frenzo
+    ```
+
+2.  **Set up the Backend:**
+
+      * (Refer to the Backend Installation section below)
+
+3.  **Set up the Frontend:**
+
+      * (Refer to the Frontend Installation section below)
 
 Once both are set up and running, the frontend at `http://localhost:5173` will automatically connect to the backend at `http://127.0.0.1:8000`.
 
----
+-----
+
 
 # 🧠 Frenzo Backend — Powered by Django REST Framework
 
