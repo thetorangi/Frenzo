@@ -93,58 +93,70 @@ For an interactive version with zoom and pan capabilities, visit: [Interactive U
 
 This method uses Docker Compose to set up both the backend API, the frontend application, and a PostgreSQL database with a single command.
 
-1.  **Prerequisites:** Ensure you have [Docker](https://www.docker.com/products/docker-desktop/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+1. **Prerequisites:** Ensure you have [Docker](https://www.docker.com/products/docker-desktop/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
-2.  **Clone the Repository:**
+2. **Clone the Repository:**
 
-    ```bash
-    git clone [https://github.com/thetorangi/frenzo.git]
-    cd frenzo
-    ```
+   ```bash
+   git clone https://github.com/thetorangi/frenzo.git
+   cd frenzo
+   ```
 
-3.  **Set up Environment Variables:**
+3. **Set up Environment Variables:**
 
-      * Navigate to the `backend/` directory.
-      * Copy the example environment file:
-        ```bash
-        cp .env.example .env
-        ```
-      * You can now configure your `backend/.env` file. The provided `docker-compose.yml` is pre-configured to use PostgreSQL, so no changes are needed for the default setup.
+   * Navigate to the `backend/` directory.
+   * Copy the example environment file:
 
-4.  **Run with Docker Compose:**
+     ```bash
+     cp .env.example .env
+     ```
+   * You can now configure your `backend/.env` file. The provided `docker-compose.yml` is pre-configured to use PostgreSQL, so no changes are needed for the default setup.
 
-      * From the root `frenzo/` directory, run the following command to build the images and start the containers:
-        ```bash
-        docker compose up --build
-        ```
-      * This will start three services: `backend`, `frontend`, and `db`. The first run may take a few minutes as Docker builds the images and installs dependencies.
-      * The `backend` container will automatically run database migrations on startup.
-      * If facing issue while starting serivces
-          * try below steps 
-            ```bash
-              sudo usermod -aG docker $USER
-              newgrp docker
-            ```
+4. **Build and Run the Containers:**
 
-5.  **Access the Application:**
+   * From the root `frenzo/` directory, build the images and start the containers without running migrations yet:
 
-      * The backend API will be accessible at: **http://localhost:8000**
-      * The frontend application will be accessible at: **http://localhost:5173**
+     ```bash
+     docker compose up --build -d
+     ```
 
-6.  **Create a Superuser (Optional):**
+5. **Run Database Migrations:**
 
-      * To access the Django admin panel and manage your data, you can create a superuser inside the running container. Run this command from the root directory:
-        ```bash
-        docker compose exec backend python manage.py createsuperuser
-        ```
+   * Run Django migrations to create database tables:
 
-7.  **Stopping the Services:**
+     ```bash
+     docker compose exec backend python manage.py makemigrations
+     docker compose exec backend python manage.py migrate
+     ```
 
-      * To stop all running containers, simply press `Ctrl+C` in the terminal where `docker compose up` is running.
-      * To stop and remove all containers, networks, and volumes associated with the project, run:
-        ```bash
-        docker compose down -v
-        ```
+6. **Restart the Containers (Optional but recommended):**
+
+   * Restart the backend container to ensure migrations take effect:
+
+     ```bash
+     docker compose restart backend
+     ```
+
+7. **Access the Application:**
+
+   * The backend API will be accessible at: **[http://localhost:8000](http://localhost:8000)**
+   * The frontend application will be accessible at: **[http://localhost:5173](http://localhost:5173)**
+
+8. **Create a Superuser (Optional):**
+
+   * To access the Django admin panel and manage your data, create a superuser inside the running container:
+
+     ```bash
+     docker compose exec backend python manage.py createsuperuser
+     ```
+
+9. **Stopping the Services:**
+
+   * To stop all running containers, press `Ctrl+C` in the terminal where `docker compose up` is running, or run:
+
+     ```bash
+     docker compose down -v
+     ```
 
 -----
 
