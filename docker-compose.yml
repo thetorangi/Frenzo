@@ -10,15 +10,21 @@ services:
     volumes:
       - ./backend:/app
       - backend_media:/app/media
-    environment:
-      - DEBUG=1
-      - DATABASE_URL=sqlite:///db.sqlite3
+    env_file:
+      - ./backend/.env
+    # environment:
+    # - DEBUG=1
+    # - DB_NAME=myapp
+    # - DB_USER=postgres
+    # - DB_PASSWORD=postgres
+    # - DB_HOST=db
+    # - DB_PORT=5432
+    depends_on:
+      - db
     networks:
       - app-network
     command: >
-      sh -c "python manage.py makemigrations &&
-             python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py runserver 0.0.0.0:8000"
 
   frontend:
     build:
